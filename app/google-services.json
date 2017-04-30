@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "360708828282",
+    "firebase_url": "https://patrimoniodb-fd610.firebaseio.com",
+    "project_id": "patrimoniodb-fd610",
+    "storage_bucket": "patrimoniodb-fd610.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:360708828282:android:214600410228a710",
+        "android_client_info": {
+          "package_name": "com.trabltp3.rastreamentopatrimonio"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "360708828282-053dscjenmojacjv0mq59pt2bust9vbj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0yuD2PBVcFwcfNTXbMaKcqDwt6x6YehM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

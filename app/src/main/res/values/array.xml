@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="filtroPesquisa">
+        <item>Quantidade</item>
+        <item>Descrição</item>
+        <item>Localização</item>
+        <item>Qualidade</item>
+        <item>Custo</item>
+    </string-array>
+</resources>
