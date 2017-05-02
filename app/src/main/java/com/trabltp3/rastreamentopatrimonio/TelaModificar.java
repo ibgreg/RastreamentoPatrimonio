@@ -6,12 +6,18 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+
+import com.google.firebase.database.DatabaseReference;
 
 /**
  * Created by Ítalo on 29/04/2017.
  */
 
 public class TelaModificar extends Fragment{
+
+    private DatabaseReference databaseReference;
+    //private EditText ed
 
     @Nullable
     @Override

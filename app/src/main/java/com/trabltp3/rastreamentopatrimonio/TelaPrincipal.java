@@ -7,11 +7,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.firebase.database.DatabaseReference;
+
 /**
  * Created by Ítalo on 29/04/2017.
  */
 
 public class TelaPrincipal extends Fragment{
+
+    private DatabaseReference databaseReference;
 
     @Nullable
     @Override
