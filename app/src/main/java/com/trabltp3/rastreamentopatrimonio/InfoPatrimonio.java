@@ -4,7 +4,7 @@ package com.trabltp3.rastreamentopatrimonio;
  * Created by Ítalo on 02/05/2017.
  */
 
-public class InfoUsuario {
+public class InfoPatrimonio {
 
     public String id;
     public String quantidade;
@@ -13,11 +13,11 @@ public class InfoUsuario {
     public String qualidade;
     public String custo;
 
-    public InfoUsuario(){
+    public InfoPatrimonio(){
 
     }
 
-    public InfoUsuario(String id, String quantidade, String descricao, String localizacao, String qualidade, String custo) {
+    public InfoPatrimonio(String id, String quantidade, String descricao, String localizacao, String qualidade, String custo) {
         this.id = id;
         this.quantidade = quantidade;
         this.descricao = descricao;

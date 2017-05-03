@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "360708828282-mfktq74hasnesok41hs51pfcnql1cuq7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.trabltp3.rastreamentopatrimonio",
+            "certificate_hash": "b693bfee76d7962fa11c9ff2b8d2f99c9d3bfdc0"
+          }
+        },
+        {
           "client_id": "360708828282-053dscjenmojacjv0mq59pt2bust9vbj.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -22,6 +30,9 @@
       "api_key": [
         {
           "current_key": "AIzaSyD0yuD2PBVcFwcfNTXbMaKcqDwt6x6YehM"
+        },
+        {
+          "current_key": "AIzaSyBq_6VG30tZHUj_t4urJY6gfCfmgud_FV0"
         }
       ],
       "services": {
@@ -29,8 +40,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "360708828282-053dscjenmojacjv0mq59pt2bust9vbj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2

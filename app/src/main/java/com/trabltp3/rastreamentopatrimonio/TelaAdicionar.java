@@ -3,6 +3,7 @@ package com.trabltp3.rastreamentopatrimonio;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class TelaAdicionar extends Fragment implements View.OnClickListener{
 
-    private DatabaseReference databaseReference;
+    private DatabaseReference databasePatrimonio;
     private FirebaseAuth firebaseAuth;
     private EditText editQualidadeAdd, editDescricaoAdd, editLocalizacaoAdd, editQuantidadeAdd, editCustoAdd;
     private Button btAdicionar;
@@ -37,8 +38,8 @@ public class TelaAdicionar extends Fragment implements View.OnClickListener{
         btAdicionar = (Button) view.findViewById(R.id.btAdicionar);
 
         firebaseAuth = firebaseAuth.getInstance();
-        databaseReference = FirebaseDatabase.getInstance().getReference();
-       //    FirebaseUser usuario = firebaseAuth.getCurrentUser();
+        FirebaseUser usuario =  firebaseAuth.getCurrentUser();
+        databasePatrimonio = FirebaseDatabase.getInstance().getReference(usuario.getUid());
 
 
         btAdicionar.setOnClickListener(this);
@@ -62,13 +63,28 @@ public class TelaAdicionar extends Fragment implements View.OnClickListener{
         String qualidade = editQualidadeAdd.getText().toString().trim();
         String custo = editCustoAdd.getText().toString();
 
-        InfoUsuario infoUsuario = new InfoUsuario(quantidade, descricao, localizacao, qualidade, custo);
+        if(TextUtils.isEmpty(quantidade)){
+            Toast.makeText(getActivity(), "O campo Quantidade está em branco", Toast.LENGTH_SHORT).show();
+        }
+        else if(TextUtils.isEmpty(descricao)){
+            Toast.makeText(getActivity(), "O campo Descrição está em branco", Toast.LENGTH_SHORT).show();
+        }
+        else if(TextUtils.isEmpty(localizacao)){
+            Toast.makeText(getActivity(), "O campo Localização está em branco", Toast.LENGTH_SHORT).show();
+        }
+        else if(TextUtils.isEmpty(qualidade)){
+            Toast.makeText(getActivity(), "O campo Qualidade está em branco", Toast.LENGTH_SHORT).show();
+        }
+        else if(TextUtils.isEmpty(custo)){
+            Toast.makeText(getActivity(), "O campo Custo está em branco", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            String id = databasePatrimonio.push().getKey();
 
-        FirebaseUser usuario =  firebaseAuth.getCurrentUser();
-        databaseReference.child(usuario.getUid()).setValue(infoUsuario);
-
-        Toast.makeText(getActivity(), "Dados salvos", Toast.LENGTH_SHORT).show();
-
+            InfoPatrimonio info = new InfoPatrimonio(id, quantidade, descricao, localizacao, qualidade, custo);
+            databasePatrimonio.child(id).setValue(info);
+            Toast.makeText(getActivity(), "Dados salvos", Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override
