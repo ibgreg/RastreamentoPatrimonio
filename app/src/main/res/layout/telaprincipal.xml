@@ -43,7 +43,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="13dp"
         android:text="Itens cadastrados:"
         android:textSize="18sp"
         android:layout_below="@+id/editPesquisa"
@@ -51,12 +51,12 @@
         android:layout_alignStart="@+id/editPesquisa" />
 
     <ListView
-        android:id="@+id/listPatrimonio"
+        android:id="@+id/listViewPatrimonios"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignLeft="@+id/textView"
         android:layout_alignStart="@+id/textView"
         android:layout_below="@+id/textView"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="14dp" />
 
 </RelativeLayout>
