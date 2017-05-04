@@ -51,7 +51,7 @@ public class TelaAdicionar extends Fragment implements View.OnClickListener{
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        getActivity().setTitle("Tela 1");
+        getActivity().setTitle("Adicionar");
 
 
     }
@@ -84,6 +84,7 @@ public class TelaAdicionar extends Fragment implements View.OnClickListener{
             InfoPatrimonio info = new InfoPatrimonio(id, quantidade, descricao, localizacao, qualidade, custo);
             databasePatrimonio.child(id).setValue(info);
             Toast.makeText(getActivity(), "Dados salvos", Toast.LENGTH_SHORT).show();
+
         }
     }
 
@@ -91,6 +92,11 @@ public class TelaAdicionar extends Fragment implements View.OnClickListener{
     public void onClick(View v) {
         if (v == btAdicionar){
             salvarDados();
+            editQuantidadeAdd.setText("");
+            editDescricaoAdd.setText("");
+            editLocalizacaoAdd.setText("");
+            editQualidadeAdd.setText("");
+            editCustoAdd.setText("");
         }
     }
 }

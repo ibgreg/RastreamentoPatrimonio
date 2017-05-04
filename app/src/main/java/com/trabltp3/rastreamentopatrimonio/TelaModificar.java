@@ -29,6 +29,6 @@ public class TelaModificar extends Fragment{
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        getActivity().setTitle("Tela 2");
+        getActivity().setTitle("Modificar");
     }
 }

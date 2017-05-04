@@ -3,6 +3,7 @@ package com.trabltp3.rastreamentopatrimonio;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -68,9 +69,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         if(TextUtils.isEmpty(email)){
             Toast.makeText(this, "Insira o seu e-mail", Toast.LENGTH_SHORT).show();
+            return;
         }
         if(TextUtils.isEmpty(senha)){
             Toast.makeText(this, "Digite a sua senha", Toast.LENGTH_SHORT).show();
+            return;
         }
 
         progressDialog.setMessage("Entrando...");
@@ -85,6 +88,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             //inicia a interface principal de cadastro
                             finish();
                             startActivity(new Intent(getApplicationContext(), MenuActivity.class));
+                        }
+                        else
+                        {
+                            AlertDialog.Builder dialogo = new AlertDialog.Builder(MainActivity.this);
+                            dialogo.setTitle("Erro");
+                            dialogo.setMessage("Usuário ou senha incorreta.");
+                            dialogo.setNeutralButton("OK", null);
+                            dialogo.show();
                         }
                     }
                 });
